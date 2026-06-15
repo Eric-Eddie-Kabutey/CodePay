@@ -107,7 +107,7 @@ export default function SolutionsPage() {
             Not sure which solution fits?
           </h2>
           <p className="text-neutral-300 max-w-lg mx-auto mb-8">
-            Talk to our team. We'll map out the right configuration for your business.
+            Talk to our team. We&apos;ll map out the right configuration for your business.
           </p>
           <Link
             href="/contact"

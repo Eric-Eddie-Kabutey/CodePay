@@ -195,7 +195,7 @@ export function Logo({ variant = 'wordmark', size = 'md', className = '' }: Logo
           fontWeight="400"
           fill="#3d81b4"
         >
-          Africa's Fintech Infrastructure
+          Africa&apos;s Fintech Infrastructure
         </text>
       </svg>
     );

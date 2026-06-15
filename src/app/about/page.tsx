@@ -40,7 +40,7 @@ export default function AboutPage() {
         <section className="bg-navy-50 border border-navy-100 rounded-2xl p-10 sm:p-14 text-center">
           <div className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-4">{mission.headline}</div>
           <blockquote className="text-3xl sm:text-4xl font-bold text-navy-900 max-w-2xl mx-auto leading-tight">
-            "{mission.statement}"
+            &ldquo;{mission.statement}&rdquo;
           </blockquote>
         </section>
 

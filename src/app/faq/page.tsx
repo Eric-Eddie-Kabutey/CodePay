@@ -48,7 +48,7 @@ export default function FAQPage() {
         {/* CTA */}
         <div className="mt-16 bg-navy-50 border border-navy-100 rounded-2xl p-8 text-center space-y-4">
           <h2 className="text-xl font-bold text-navy-900">Still have questions?</h2>
-          <p className="text-sm text-neutral-500">Talk to our team — we'll give you a straight answer.</p>
+          <p className="text-sm text-neutral-500">Talk to our team — we&apos;ll give you a straight answer.</p>
           <Link href="/contact" className="inline-block bg-navy-900 text-white text-sm font-semibold px-6 py-3 rounded-lg hover:bg-navy-700 transition-colors">
             Contact Us
           </Link>
