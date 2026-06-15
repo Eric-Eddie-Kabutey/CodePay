@@ -1,39 +1,48 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
+import { hero } from '@/content/homepage';
 
 function HomeHero() {
   return (
-    <div className='w-full'>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="lg:w-1/2 space-y-6 sm:space-y-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
-                Unified Remittance<br />
-                Infrastructure for Africa
-              </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                Launch fintech, remittance, and banking platforms across Africa in 8–12 weeks. One platform. Every country. No rebuilds.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/contact" className="inline-block bg-navy-600 text-white text-base sm:text-lg px-8 py-3 sm:py-4 rounded-lg hover:bg-navy-700 transition-colors font-semibold">
-                  Book a Demo
-                </a>
-                <a href="/developers" className="inline-block border-2 border-navy-600 text-navy-600 text-base sm:text-lg px-8 py-3 sm:py-4 rounded-lg hover:bg-navy-50 transition-colors font-semibold">
-                  Explore Platform
-                </a>
-              </div>
-            </div>
-            <div className="lg:w-1/2 mt-8 lg:mt-0">
-              <img
-                src="https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/63187552840368fe09a74d71_Homepage%20-%20Hero.png"
-                alt="CodePay platform dashboard"
-                className="w-full h-auto max-h-[400px] sm:max-h-[500px] object-contain"
-                loading="lazy"
-              />
-            </div>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 lg:pt-24 pb-16 lg:pb-20">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+        {/* Text */}
+        <div className="lg:w-1/2 space-y-7">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
+            {hero.headline}
+          </h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed">
+            {hero.subheadline}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 pt-1">
+            <Link
+              href={hero.primaryCTA.href}
+              className="inline-block text-center bg-navy-900 text-white text-base font-semibold px-7 py-3.5 rounded-lg hover:bg-navy-700 transition-colors"
+            >
+              {hero.primaryCTA.label}
+            </Link>
+            <Link
+              href={hero.secondaryCTA.href}
+              className="inline-block text-center border border-navy-200 text-navy-900 text-base font-semibold px-7 py-3.5 rounded-lg hover:bg-navy-50 transition-colors"
+            >
+              {hero.secondaryCTA.label}
+            </Link>
           </div>
-        </section>
+        </div>
+
+        {/* Image */}
+        <div className="lg:w-1/2">
+          <img
+            src={hero.imageUrl}
+            alt={hero.imageAlt}
+            className="w-full h-auto max-h-[460px] object-contain"
+            loading="eager"
+          />
+        </div>
       </div>
-  )
+    </section>
+  );
 }
 
-export default HomeHero
+export default HomeHero;

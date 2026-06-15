@@ -60,3 +60,18 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+@keyframes differentiator-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-differentiator-scroll {
+  animation: differentiator-scroll 28s linear infinite;
+}

@@ -1,14 +1,16 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import LandingPage from "@/components/home/LandingPage";
-import HomeHero from "@/components/home/home-hero";
-import OnePlatform from "@/components/home/one-platform";
-import FinanceControl from "@/components/home/finance-control";
-import AlwaysSecure from "@/components/home/always-secure";
-import CustomizedNeeds from "@/components/home/customized-needs";
-import FindUs from "@/components/home/find-us";
-import TeamUp from "@/components/home/team-us";
 import Navbar from "@/components/shared/navbar";
+import HomeHero from "@/components/home/home-hero";
+import WhatIsCodePay from "@/components/home/find-us";
+import AdminLayers from "@/components/home/finance-control";
+import StatsAndDev from "@/components/home/always-secure";
+import Testimonials from "@/components/home/customized-needs";
+import FinalCTA from "@/components/home/team-us";
+
+export const metadata = {
+  title: 'CodePay — Remittance and Banking Infrastructure for Africa',
+  description:
+    "CodePay is Africa's first AI-powered remittance infrastructure, built on blockchain and modern cryptography. Launch your fintech, bank, or remittance business in 8–12 weeks.",
+};
 
 export default function Home() {
   return (
@@ -17,13 +19,11 @@ export default function Home() {
         <Navbar />
         <HomeHero />
       </div>
-      <OnePlatform />
-      <FinanceControl />
-      <AlwaysSecure />
-      <CustomizedNeeds />
-      <FindUs />
-      <TeamUp />
-      {/* <LandingPage /> */}
+      <WhatIsCodePay />
+      <AdminLayers />
+      <StatsAndDev />
+      <Testimonials />
+      <FinalCTA />
     </div>
-  )
+  );
 }

@@ -81,7 +81,7 @@ export function Logo({ variant = 'wordmark', size = 'md', className = '' }: Logo
           fontFamily="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif"
           fontSize="68"
           fontWeight="700"
-          fill="#3d81b4"
+          fill="#000"
           letterSpacing="-2"
           textAnchor="start"
         >

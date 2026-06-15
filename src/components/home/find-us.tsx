@@ -1,112 +1,73 @@
-"use client"
-import React, { useState } from 'react'
+import React from "react";
+import { trustBar, whatIsCodePay } from "@/content/homepage";
+import OnePlatform from "./one-platform";
 
-interface LocationItem {
-  id: string;
-  title: string;
-  image: string;
-  srcSet: string;
-  address: string;
-  mapLink: string;
-}
-
-const locations: LocationItem[] = [
-    {
-      id: 'London',
-      title: 'London',
-      image: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5d954f0f5bedcdf72e_image-1.jpg',
-      srcSet: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5d954f0f5bedcdf72e_image-1-p-500.jpg 500w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5d954f0f5bedcdf72e_image-1-p-800.jpg 800w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5d954f0f5bedcdf72e_image-1-p-1080.jpg 1080w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5d954f0f5bedcdf72e_image-1.jpg 2362w',
-      address: 'Nairobi, Kenya (HQ)\nServing 15+ African Markets\nAfrica-first fintech infrastructure',
-      mapLink: 'https://maps.app.goo.gl/'
-    },
-    {
-      id: 'Singapore',
-      title: 'Lagos',
-      image: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5ccc7c8829021f8ce6_image-1-1.jpg',
-      srcSet: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5ccc7c8829021f8ce6_image-1-1-p-500.jpg 500w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5ccc7c8829021f8ce6_image-1-1-p-800.jpg 800w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5ccc7c8829021f8ce6_image-1-1-p-1080.jpg 1080w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/62fe4b5ccc7c8829021f8ce6_image-1-1.jpg 1766w',
-      address: 'Lagos, Nigeria\nWest African Operations\nServing fintech ecosystem across WAMZ',
-      mapLink: 'https://maps.app.goo.gl/'
-    },
-    {
-      id: 'Ho Chi Minh City',
-      title: 'Johannesburg',
-      image: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f3fd1eb0104326f2ad7e_The%20Hive.jpg',
-      srcSet: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f3fd1eb0104326f2ad7e_The%20Hive-p-500.jpg 500w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f3fd1eb0104326f2ad7e_The%20Hive-p-800.jpg 800w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f3fd1eb0104326f2ad7e_The%20Hive-p-1080.jpg 1080w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f3fd1eb0104326f2ad7e_The%20Hive.jpg 2346w',
-      address: 'Johannesburg, South Africa\nSouthern African Hub\nSupporting sub-Saharan expansion',
-      mapLink: 'https://maps.app.goo.gl/'
-    },
-    {
-      id: 'Bangkok',
-      title: 'Kigali',
-      image: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f591797f9b25180ab4ec_Gaysorn%20Tower.jpg',
-      srcSet: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f591797f9b25180ab4ec_Gaysorn%20Tower-p-500.jpg 500w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f591797f9b25180ab4ec_Gaysorn%20Tower-p-800.jpg 800w, https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/6541f591797f9b25180ab4ec_Gaysorn%20Tower.jpg 881w',
-      address: 'Kigali, Rwanda\nEast African Growth Center\nDriving fintech innovation across EAC',
-      mapLink: 'https://maps.app.goo.gl/'
-    }
-  ];
-
-function FindUs() {
-    const [activeLocation, setActiveLocation] = useState<string>('London');
-
-    const currentLocation = locations.find(loc => loc.id === activeLocation) || locations[0];
+function TrustAndIdentity() {
   return (
-    <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-navy-900">Global African Headquarters</h1>
-          
-          <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
-            {/* Location Tabs - Left Side */}
-            <div className="lg:w-1/4 bg-white">
-              {locations.map((location) => (
-                <button
-                  key={location.id}
-                  onClick={() => setActiveLocation(location.id)}
-                  className={`w-full text-left p-3 sm:p-4 mb-1 sm:mb-2 transition-colors ${activeLocation === location.id ? 'text-black font-medium' : 'text-gray-600 hover:text-gray-900'}`}
-                >
-                  <div className="text-lg sm:text-xl">{location.title}</div>
-                </button>
-              ))}
-            </div>
-            
-            {/* Location Content - Right Side */}
-            <div className="lg:w-3/4 bg-neutral-50 rounded-lg overflow-hidden border border-neutral-200">
-              <div className="flex flex-col lg:flex-row">
-                {/* Image */}
-                <div className="lg:w-1/2">
-                  <img
-                    src={currentLocation.image}
-                    alt={currentLocation.title}
-                    className="w-full h-48 sm:h-64 lg:h-full object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 50vw"
-                    srcSet={currentLocation.srcSet}
-                  />
-                </div>
+    <section className="bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        {/* ── TRUST BAR ───────────────────────────────────────────── */}
+        <div className="py-12 sm:py-14">
+          <p className="mb-16 text-center text-sm xl:text-base font-light uppercase tracking-[0.18em]">
+            {trustBar.label}
+          </p>
 
-                {/* Address and Button */}
-                <div className="lg:w-1/2 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
-                  <div>
-                    <p className="whitespace-pre-line text-base sm:text-lg mb-4 sm:mb-6 text-neutral-700 font-medium">
-                      {currentLocation.address}
-                    </p>
-                  </div>
-                  <div className="mt-auto">
-                    <a
-                      href={currentLocation.mapLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block border-2 border-navy-600 text-navy-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-navy-600 hover:text-white transition-colors font-semibold"
-                    >
-                      View on Map
-                    </a>
-                  </div>
+          <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-3">
+            {trustBar.items.slice(0, 3).map((item, index) => (
+              <div
+                key={item.text}
+                className={`${
+                  index !== 2 ? "" : ""
+                } ${
+                  index === 0 ? "lg:pr-6" : index === 1 ? "lg:px-6" : "lg:pl-6"
+                }`}
+              >
+                <div className="grid grid-cols-[auto_1fr] items-start gap-x-5">
+                  <h3 className="text-5xl font-light tracking-tight sm:text-5xl lg:text-6xl">
+                    {index === 0 && "15+"}
+                    {index === 1 && "100%"}
+                    {index === 2 && "AI"}
+                  </h3>
+
+                  <p className="pt-2 text-lg leading-snug text-gray-700 sm:text-xl lg:text-2xl">
+                    {item.text}
+                  </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── WHAT IS CODEPAY ────────────────────────────────────── */}
+        <div className="py-20 sm:py-24">
+          {/* Header left, body right */}
+          <div className="mb-16 grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <h2 className="max-w-xl text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
+                {whatIsCodePay.headline}
+              </h2>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="max-w-2xl space-y-5">
+                {whatIsCodePay.body.split("\n\n").map((para, index) => (
+                  <p
+                    key={index}
+                    className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed"
+                  >
+                    {para}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
+
+          {/* Differentiator Cards - Infinite Horizontal Scroll */}
+          <OnePlatform />
         </div>
-      </section>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default FindUs
+export default TrustAndIdentity;

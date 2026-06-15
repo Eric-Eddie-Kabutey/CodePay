@@ -1,169 +1,82 @@
-"use client"
-import React, { useEffect, useRef, useState } from 'react'
+"use client";
 
-interface ScrollItem {
-  id: string;
-  title: string;
-  description: string;
-  buttonText: string;
-  buttonLink: string;
-  imageUrl: string;
-  imageAlt: string;
-}
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { adminLayers } from "@/content/homepage";
 
-function FinanceControl() {
-    const [activeScrollItem, setActiveScrollItem] = useState<string>('scroll1');
-    const textItemsRef = useRef<(HTMLDivElement | null)[]>([]);
-    const imageContainerRef = useRef<HTMLDivElement>(null);
-    const scrollItems: ScrollItem[] = [
-    {
-      id: 'scroll1',
-      title: 'Remittance Made Simple',
-      description: 'Launch international and local money transfers across 15+ African countries. Handle multiple currency pairs, dynamic exchange rates, and payout rail management all in one platform.',
-      buttonText: 'Explore Remittance Engine',
-      buttonLink: '/products#remittance',
-      imageUrl: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/63187a6b5d483c5a0d6b1067_00__Homepage%20-%20Feat%201.png',
-      imageAlt: 'Remittance and transfer features'
-    },
-    {
-      id: 'scroll2',
-      title: 'Banking Without Borders',
-      description: 'Build complete digital banking services. Account creation, card issuance, loans, and multi-bank management. Integrate with existing banking infrastructure or build from scratch.',
-      buttonText: 'Explore Banking Suite',
-      buttonLink: '/products#banking',
-      imageUrl: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/63248eebe3ce6c477fefd39c_01__Homepage%20-%20Feat%202.png',
-      imageAlt: 'Banking suite features'
-    },
-    {
-      id: 'scroll3',
-      title: 'Agent Networks at Scale',
-      description: 'Manage distributed cash networks across your entire continent. Master agents, sub-agents, settlement, commissions, and customer discovery. No limits to how many you onboard.',
-      buttonText: 'Explore Agent Network',
-      buttonLink: '/products#agents',
-      imageUrl: 'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/63248de10957f67b02f7882c_01__Homepage%20-%20Feat%203.png',
-      imageAlt: 'Agent network management'
-    }
-    ];
-
-    useEffect(() => {
-        const handleScroll = () => {
-          if (!imageContainerRef.current) return;
-    
-          const containerRect = imageContainerRef.current.getBoundingClientRect();
-          const containerBottom = containerRect.bottom;
-          const triggerThreshold = containerRect.height * 0.2;
-    
-          textItemsRef.current.forEach((item, index) => {
-            if (!item) return;
-            
-            const itemRect = item.getBoundingClientRect();
-            if (itemRect.top <= containerBottom - triggerThreshold && 
-                itemRect.bottom >= containerBottom - triggerThreshold) {
-              setActiveScrollItem(scrollItems[index].id);
-            }
-          });
-        };
-    
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
+function AdminLayers() {
   return (
-    <section className="py-12 sm:py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 lg:mb-12 leading-tight text-navy-900">
-            Build What You Need
-          </h1>
-          
-          <div className="relative">
-            {/* Mobile View - Stacked Cards */}
-            <div className="lg:hidden space-y-8">
-              {scrollItems.map((item) => (
-                <div key={item.id} className="bg-white rounded-xl shadow-sm p-6">
-                  <div className="mb-6">
-                    <img
-                      src={item.imageUrl}
-                      alt={item.imageAlt}
-                      className="w-full h-auto rounded-lg"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 className="text-2xl font-normal mb-4">{item.title}</h2>
-                  <p className="text-gray-700 mb-6">{item.description}</p>
-                  <a
-                    href={item.buttonLink}
-                    className="inline-block bg-navy-600 hover:bg-navy-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                  >
-                    {item.buttonText}
-                  </a>
+    <section className="bg-neutral-50 py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-14 max-w-5xl"
+        >
+          <h2 className="text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
+            {adminLayers.headline}
+          </h2>
+
+          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-gray-700 sm:text-xl lg:text-2xl">
+            {adminLayers.body}
+          </p>
+        </motion.div>
+
+        {/* Full-width layers */}
+        <div className="w-full space-y-4">
+          {adminLayers.layers.map((layer, index) => (
+            <motion.article
+              key={layer.number}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{
+                duration: 0.65,
+                delay: index * 0.08,
+                ease: "easeOut",
+              }}
+              className="group relative w-full py-8 pl-5 transition-all duration-300 hover:-translate-y-1 sm:py-10"
+            >
+              {/* Hover left line */}
+              <div className="absolute left-0 top-0 h-0 w-1 bg-teal-500 rounded-full transition-all duration-700 ease-out group-hover:h-full" />
+
+              <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-2">
+                {/* Number */}
+                {/* <div className="lg:col-span-1">
+                  <span className="text-sm font-medium text-[#c6abfa] transition-colors duration-300">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div> */}
+
+                {/* Title */}
+                <div className="lg:col-span-4">
+                  <h3 className="text-3xl font-light leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
+                    {layer.title}
+                  </h3>
                 </div>
-              ))}
-            </div>
-            
-            {/* Desktop View - Sticky Scroll */}
-            <div className="hidden lg:block">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12">
-                {/* Text Column */}
-                <div className="space-y-12 sm:space-y-16 lg:space-y-24">
-                  {scrollItems.map((item, index) => (
-                    <div 
-                      key={item.id}
-                      ref={(el) => {
-                        if (el) {
-                          textItemsRef.current[index] = el;
-                        }
-                      }}
-                      className="scroll-text-item min-h-[60vh] sm:min-h-[80vh] flex flex-col justify-start"
-                      style={{ paddingTop: index === 0 ? '0' : '3rem' }}
-                    >
-                      <div className={`transition-opacity duration-500 ${activeScrollItem === item.id ? 'opacity-100' : 'opacity-40'}`}>
-                        <h2 className="text-2xl sm:text-[2rem] leading-[1.2] font-normal mb-4 sm:mb-6">
-                          {item.title}
-                        </h2>
-                        <p className="text-xl sm:text-[1.5rem] leading-[1.4] text-gray-700 mb-6 sm:mb-8">
-                          {item.description}
-                        </p>
-                        <a 
-                          href={item.buttonLink} 
-                          className="inline-block bg-navy-600 hover:bg-navy-700 text-white text-base sm:text-xl px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors"
-                        >
-                          {item.buttonText}
-                        </a>
-                      </div>
-                    </div>
-                  ))}
+
+                {/* Body */}
+                <div className="lg:col-span-8">
+                  <p className="max-w-3xl text-base leading-8 text-gray-700 sm:text-lg lg:text-xl">
+                    {layer.body}
+                  </p>
                 </div>
-                
-                {/* Image Column */}
-                <div 
-                  ref={imageContainerRef}
-                  className="sticky top-24 h-[calc(100vh-6rem)]"
-                >
-                  <div className="relative h-full w-full overflow-hidden rounded-xl bg-neutral-100 border border-neutral-200">
-                    {scrollItems.map((item) => (
-                      <div 
-                        key={item.id}
-                        className={`absolute inset-0 transition-all duration-500 ease-in-out ${activeScrollItem === item.id ? 
-                          'opacity-100 z-10' : 
-                          'opacity-0 z-0'}`}
-                      >
-                        <div className="w-full h-full flex items-start justify-center p-4 sm:p-8">
-                          <img
-                            src={item.imageUrl}
-                            alt={item.imageAlt}
-                            className="w-full h-auto max-h-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
+                {/* Arrow */}
+                {/* <div className="absolute right-0 top-8 sm:top-10">
+                  <ArrowUpRight className="h-8 w-8 text-black transition-all duration-500 ease-out group-hover:scale-150 group-hover:rotate-45 group-hover:translate-x-2 group-hover:-translate-y-2" />
+                </div> */}
               </div>
-            </div>
-          </div>
+            </motion.article>
+          ))}
         </div>
-      </section>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default FinanceControl
+export default AdminLayers;

@@ -1,102 +1,58 @@
-import React from 'react'
+import React from "react";
+import { Quote } from "lucide-react";
+import { testimonials } from "@/content/homepage";
 
-function CustomizedNeeds() {
+function Testimonials() {
+  const testimonialStyles = ["bg-[#FFF4E0]", "bg-[#ECFAF1]", "bg-[#F1EAFE]"];
+
   return (
-    <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Image container */}
-          <div className="mb-8 sm:mb-12 w-full">
-            <div className="bg-neutral-100 p-4 sm:p-6 rounded-xl">
-              <img
-                src="https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/632c18f1bd8a0d65a6c91685_00_Local%20Solutions.png"
-                alt="Multi-country platform localisation features"
-                className="w-full h-auto object-contain rounded-lg"
-                loading="lazy"
-                srcSet="
-                  https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/632c18f1bd8a0d65a6c91685_00_Local%20Solutions-p-800.png 800w,
-                  https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/632c18f1bd8a0d65a6c91685_00_Local%20Solutions-p-1080.png 1080w,
-                  https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/632c18f1bd8a0d65a6c91685_00_Local%20Solutions-p-1600.png 1600w
-                "
-              />
-            </div>
-          </div>
-
-          {/* Centered heading */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 max-w-4xl mx-auto text-navy-900">
-            Scale Across Africa. No Rebuilds.
-          </h1>
-
-          {/* Features grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
-            {/* Left column */}
-            <div className="space-y-8 sm:space-y-12">
-              {/* Feature 1 */}
-              <div className="grid grid-cols-[40px_1fr] gap-4 sm:gap-6 items-start">
-                <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-navy-600 text-white flex items-center justify-center font-bold pt-0 text-lg">
-                  ✓
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 leading-snug text-navy-900">
-                    One Platform for Every Country
-                  </h3>
-                  <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                    Launch in 15+ African countries without rebuilding infrastructure. Compliance and regulatory requirements pre-configured.
-                  </p>
-                </div>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="grid grid-cols-[40px_1fr] gap-4 sm:gap-6 items-start">
-                <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-navy-600 text-white flex items-center justify-center font-bold pt-0 text-lg">
-                  ✓
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 leading-snug text-navy-900">
-                    Multi-Channel Access
-                  </h3>
-                  <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                    Reach users via mobile app, USSD, WhatsApp, and web. Support urban and rural users with the same backend.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right column */}
-            <div className="space-y-8 sm:space-y-12">
-              {/* Feature 3 */}
-              <div className="grid grid-cols-[40px_1fr] gap-4 sm:gap-6 items-start">
-                <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-navy-600 text-white flex items-center justify-center font-bold pt-0 text-lg">
-                  ✓
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 leading-snug text-navy-900">
-                    Multi-Layer Administration
-                  </h3>
-                  <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                    Super Admin → Country Admin → Master Agent → Sub-Agent structure. Flexible role management and multi-language support.
-                  </p>
-                </div>
-              </div>
-
-              {/* Feature 4 */}
-              <div className="grid grid-cols-[40px_1fr] gap-4 sm:gap-6 items-start">
-                <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-navy-600 text-white flex items-center justify-center font-bold pt-0 text-lg">
-                  ✓
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 leading-snug text-navy-900">
-                    Developer-First APIs
-                  </h3>
-                  <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                    Built in .NET with REST APIs, SDKs for Node.js and Flutter, comprehensive documentation, and sandbox environment.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className="bg-white py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Header */}
+        <div className="mb-14 max-w-4xl">
+          <h2 className="text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
+            {testimonials.headline}
+          </h2>
         </div>
-      </section>
-  )
+
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {testimonials.items.map((t, index) => (
+            <article
+              key={`${t.author}-${index}`}
+              className={`group relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-md px-6 py-7 transition-all duration-300 sm:px-8 sm:py-8 bg-gray-100`}
+            >
+              {/* Icon */}
+              <Quote
+                className={`h-8 w-8 text-black/70 transition-transform duration-500 ease-out group-hover:scale-125 ${
+                  testimonialStyles[index % testimonialStyles.length]
+                } `}
+              />
+
+              {/* Quote */}
+              <blockquote className="mt-16 text-xl font-light leading-relaxed tracking-tight text-black sm:text-2xl">
+                “{t.quote}”
+              </blockquote>
+
+              {/* Author */}
+              <div className="mt-10 pt-6">
+                {/* Animated author line */}
+                <div className="mb-6 h-1 w-full overflow-hidden rounded-full">
+                  <div className="h-full w-0 rounded-full bg-teal-500 transition-all duration-700 ease-out group-hover:w-full" />
+                </div>
+
+                <div className="text-base font-medium text-black">
+                  {t.author}
+                </div>
+
+                <div className="mt-1 text-sm text-black/50">{t.location}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default CustomizedNeeds
+export default Testimonials;

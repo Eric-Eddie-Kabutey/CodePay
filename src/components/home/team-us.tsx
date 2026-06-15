@@ -1,35 +1,67 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { finalCTA } from '@/content/homepage';
 
-function TeamUp() {
+function FinalCTA() {
   return (
-    <div className="flex justify-center items-center p-4 sm:p-6 lg:p-8">
-        <div className="w-full max-w-7xl bg-gradient-to-r from-navy-600 to-navy-700 border border-navy-500 rounded-xl p-6 sm:p-8 lg:p-12 shadow-lg">
-          <div className="space-y-6 sm:space-y-8">
-            {/* <p className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              Your Fintech. Our Infrastructure. <br className="hidden sm:block" />
-              Africa's Future.
-            </p> */}
-            <p className="text-black text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-light leading-[1.3]">
-              Launch a complete fintech platform in 8–12 weeks. No rebuilds. No country limits. Just one powerful infrastructure serving Africa.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a
-                href="/contact"
-                className="inline-block px-8 py-3 sm:py-4 bg-white text-navy-600 rounded-lg hover:bg-neutral-100 transition-colors duration-300 text-base sm:text-lg font-semibold"
+    <section className="bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="group relative overflow-hidden rounded-lg px-6 py-14 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+          {/* Base background */}
+          <div className="absolute inset-0 bg-[#071B2D]" />
+
+          {/* Soft blurred gradient circles */}
+          <div className="absolute -left-24 -top-28 h-80 w-80 rounded-full bg-[#0F766E]/80 blur-3xl" />
+          <div className="absolute left-1/4 top-10 h-196 w-196 rounded-full bg-[#12355B]/40 blur-3xl" />
+          <div className="absolute -right-20 -top-20 h-196 w-196 rounded-full bg-[#38BDF8]/45 blur-3xl" />
+          <div className="absolute bottom-[-9rem] right-12 h-80 w-80 rounded-full bg-[#F1EAFE]/45 blur-3xl" />
+          <div className="absolute bottom-[-10rem] left-1/3 h-72 w-72 rounded-full bg-[#ECFAF1]/20 blur-3xl" />
+
+          {/* Soft overlay for readability */}
+          <div className="absolute inset-0 bg-black/25" />
+
+          <div className="relative z-10 grid gap-12 lg:grid-cols-12 lg:items-end">
+            {/* Content */}
+            <div className="lg:col-span-8">
+              <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-white/55">
+                Ready to build?
+              </p>
+
+              <h2 className="max-w-4xl text-4xl font-light leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                {finalCTA.headline}
+              </h2>
+
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl lg:text-2xl">
+                {finalCTA.subheadline}
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col gap-4 sm:flex-row lg:col-span-4 lg:flex-col lg:items-end">
+              <Link
+                href={finalCTA.primaryCTA.href}
+                className="group/link inline-flex items-center justify-between gap-6 rounded-full bg-white px-6 py-4 text-base font-medium text-[#071B2D] shadow-sm transition-all duration-300 hover:bg-[#F4D35E] hover:text-black sm:min-w-[240px]"
               >
-                Book a Demo
-              </a>
-              <a
-                href="/developers"
-                className="inline-block px-8 py-3 sm:py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-navy-600 transition-colors duration-300 text-base sm:text-lg font-semibold"
+                <span>{finalCTA.primaryCTA.label}</span>
+
+                <ArrowUpRight className="h-5 w-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              </Link>
+
+              <Link
+                href={finalCTA.secondaryCTA.href}
+                className="group/link inline-flex items-center justify-between gap-6 rounded-full border border-white/25 bg-white/10 px-6 py-4 text-base font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-white/60 hover:bg-white hover:text-[#071B2D] sm:min-w-[240px]"
               >
-                Explore Platform
-              </a>
+                <span>{finalCTA.secondaryCTA.label}</span>
+
+                <ArrowUpRight className="h-5 w-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              </Link>
             </div>
           </div>
         </div>
       </div>
-  )
+    </section>
+  );
 }
 
-export default TeamUp
+export default FinalCTA;
