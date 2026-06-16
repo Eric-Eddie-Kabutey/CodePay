@@ -2,9 +2,11 @@ import Navbar from "@/components/shared/navbar";
 import HomeHero from "@/components/home/home-hero";
 import WhatIsCodePay from "@/components/home/find-us";
 import AdminLayers from "@/components/home/finance-control";
-import StatsAndDev from "@/components/home/always-secure";
-import Testimonials from "@/components/home/customized-needs";
-import FinalCTA from "@/components/home/team-us";
+import DevCta from "@/components/home/DevCta";
+import Testimonials from "@/components/home/Testimonials";
+import FooterCTA from "@/components/home/FooterCta";
+import BuildStats from "@/components/home/BuildStats";
+import OnePlatform from "@/components/home/one-platform";
 
 export const metadata = {
   title: 'CodePay — Remittance and Banking Infrastructure for Africa',
@@ -20,10 +22,12 @@ export default function Home() {
         <HomeHero />
       </div>
       <WhatIsCodePay />
+      <OnePlatform />
       <AdminLayers />
-      <StatsAndDev />
+      <BuildStats />
+      <DevCta />
       <Testimonials />
-      <FinalCTA />
+      <FooterCTA />
     </div>
   );
 }

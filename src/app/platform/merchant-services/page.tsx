@@ -1,5 +1,5 @@
-import AlwaysSecure from '@/components/home/always-secure'
-import TeamUp from '@/components/home/team-us'
+import AlwaysSecure from '@/components/home/DevCta'
+import TeamUp from '@/components/home/FooterCta'
 import MerchantAdditionalBenefits from '@/components/Merchants/admissional-benefits'
 import FeatureSection from '@/components/Merchants/benefits'
 import MerchantHero from '@/components/Merchants/merchant-service'

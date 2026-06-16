@@ -10,7 +10,7 @@ function Footer() {
         {/* Top: brand + 5 columns */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
           {/* Brand */}
-          <div className="lg:w-52 flex-shrink-0 space-y-4">
+          <div className="lg:w-52 shrink-0 space-y-4">
             <Link href="/">
               <Logo variant="wordmark" className="h-10" />
             </Link>
@@ -32,7 +32,7 @@ function Footer() {
                       >
                         <span>{link.label}</span>
 
-                        <span className="absolute -bottom-1 left-0 h-[1px] w-0 rounded-full bg-teal-500 transition-all duration-300 ease-out group-hover/link:w-full" />
+                        <span className="absolute -bottom-1 left-0 h-px w-0 rounded-full bg-theme-green-900 transition-all duration-300 ease-out group-hover/link:w-full" />
                       </Link>
                     </li>
                   ))}
@@ -53,7 +53,7 @@ function Footer() {
                 key={item.platform}
                 href={item.href}
                 aria-label={item.ariaLabel}
-                className="text-neutral-400 hover:text-navy-600 transition-colors"
+                className="text-neutral-400 hover:text-theme-blue-900 transition-colors"
               >
                 {item.platform === "LinkedIn" && (
                   <svg

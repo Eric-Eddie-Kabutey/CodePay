@@ -63,7 +63,7 @@ function TrustAndIdentity() {
           </div>
 
           {/* Differentiator Cards - Infinite Horizontal Scroll */}
-          <OnePlatform />
+          
         </div>
       </div>
     </section>

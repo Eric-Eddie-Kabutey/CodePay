@@ -1,5 +1,5 @@
 import React from "react";
-import TeamUp from "../home/team-us";
+import TeamUp from "../home/FooterCta";
 
 function LatestNews() {
   const news = [

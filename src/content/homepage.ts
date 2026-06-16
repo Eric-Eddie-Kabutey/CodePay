@@ -127,7 +127,7 @@ export const adminLayers = {
 };
 
 export const devTeaser = {
-  headline: 'Built in .NET. Ready for Your Stack.',
+  headline: 'Built in .NET, Ready for Your Stack.',
   body: "CodePay's core is built on .NET — enterprise-grade, secure, and scalable. Our developer portal gives you everything you need to integrate, customize, and launch. Clean APIs, comprehensive documentation, and SDKs that let you go from idea to production faster than you thought possible.",
   cta: { label: 'Explore Developer Docs', href: '/developers' },
 };

@@ -27,6 +27,11 @@
   --color-neutral-700: #374151;
   --color-neutral-800: #1f2937;
   --color-neutral-900: #111827;
+
+  --color-theme-amber-900: #F1D8AE;
+  --color-theme-green-900: #CBEBD5;
+  --color-theme-purple-900: #DACBF4;
+  --color-theme-blue-900: #C9DFF4;
 }
 
 .hero-bg {
@@ -74,4 +79,19 @@
 
 .animate-differentiator-scroll {
   animation: differentiator-scroll 28s linear infinite;
+}
+
+
+@keyframes stats-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-stats-marquee {
+  animation: stats-marquee 28s linear infinite;
 }

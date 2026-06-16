@@ -5,7 +5,7 @@ import LeadershipTeam from '@/components/about-us/team'
 import OurJourney from '@/components/about-us/our-journey'
 import React from 'react'
 import FindUs from '@/components/home/find-us'
-import TeamUp from '@/components/home/team-us'
+import TeamUp from '@/components/home/FooterCta'
 import Navbar from '@/components/shared/navbar'
 
 

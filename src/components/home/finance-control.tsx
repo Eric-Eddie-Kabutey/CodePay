@@ -42,7 +42,7 @@ function AdminLayers() {
               className="group relative w-full py-8 pl-5 transition-all duration-300 hover:-translate-y-1 sm:py-10"
             >
               {/* Hover left line */}
-              <div className="absolute left-0 top-0 h-0 w-1 bg-teal-500 rounded-full transition-all duration-700 ease-out group-hover:h-full" />
+              <div className="absolute left-0 top-0 h-0 w-1 bg-theme-green-900 rounded-full transition-all duration-700 ease-out group-hover:h-full" />
 
               <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-2">
                 {/* Number */}

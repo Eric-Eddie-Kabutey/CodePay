@@ -8,7 +8,7 @@ function OnePlatform() {
   const active = Differentiator.items.find((p) => p.id === activeId) || Differentiator.items[0];
 
   return (
-    <section className="pt-12 sm:pt-16 max-w-7xl mx-auto">
+    <section className="py-12 sm:py-16 max-w-7xl mx-auto">
         <div className="rounded-xl p-4 sm:p-6 lg:p-8 bg-neutral-50">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="lg:w-1/2 space-y-6 sm:space-y-8">
@@ -19,7 +19,7 @@ function OnePlatform() {
                   className={`relative flex flex-col gap-6 pl-6 sm:pl-8 cursor-pointer transition-opacity ${activeId === tab.id ? 'opacity-100' : 'opacity-50 hover:opacity-70'}`}
                 >
                   {activeId === tab.id && (
-                    <div className="absolute left-0 top-0 h-full w-1 bg-teal-500 rounded-full"></div>
+                    <div className="absolute left-0 top-0 h-full w-1 bg-theme-green-900 rounded-full"></div>
                   )}
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-normal mb-3 sm:mb-4">{tab.title}</h2>
                   {activeId === tab.id && (
