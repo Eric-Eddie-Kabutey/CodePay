@@ -25,10 +25,10 @@ function BuildStats() {
     },
     {
       icon: Globe2,
-      bg: "bg-transparent",
+      bg: "bg-gray-50",
       border: "bg-theme-blue-900",
-      cardBorder: "border-theme-blue-900",
-      isTransparent: true,
+      cardBorder: "border-transparent",
+      isTransparent: false,
     },
     {
       icon: WalletCards,
@@ -39,10 +39,10 @@ function BuildStats() {
     },
     {
       icon: BrainCircuit,
-      bg: "bg-transparent",
-      border: "bg-theme-purple-900",
-      cardBorder: "border-theme-purple-900",
-      isTransparent: true,
+      bg: "bg-gray-50",
+      border: "bg-theme-blue-900",
+      cardBorder: "border-transparent",
+      isTransparent: false,
     },
     {
       icon: ShieldCheck,

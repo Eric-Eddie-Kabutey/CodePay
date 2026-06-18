@@ -2,7 +2,7 @@ export const navigation = {
   brand: { name: 'CodePay', href: '/' },
 
   primaryCTA: { label: 'Book a Demo', href: '/contact' },
-  secondaryCTA: { label: 'Get Sandbox Access', href: '/developers' },
+  secondaryCTA: { label: 'Stack Suite', href: '/developers' },
 
   links: [
     {
@@ -29,11 +29,11 @@ export const navigation = {
         { label: 'For Businesses', href: '/solutions#business', description: 'Payroll, payments, and financial services for teams' },
       ],
     },
-    {
-      id: 'how-it-works',
-      label: 'How It Works',
-      href: '/how-it-works',
-    },
+    // {
+    //   id: 'how-it-works',
+    //   label: 'How It Works',
+    //   href: '/how-it-works',
+    // },
     {
       id: 'developers',
       label: 'Developers',

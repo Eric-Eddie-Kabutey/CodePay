@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 import { Logo } from './logo';
+import { ArrowUpRight } from "lucide-react";
 import { navigation } from '@/content/navigation';
 
 function Navbar() {
@@ -91,9 +92,10 @@ function Navbar() {
             </Link>
             <Link
               href={navigation.primaryCTA.href}
-              className="text-sm xl:text-base bg-navy-900 text-white px-4 xl:px-5 py-2 xl:py-2.5 rounded-lg hover:bg-navy-700 transition-colors font-medium"
+              className="group/link inline-flex items-center justify-between gap-6 rounded-full border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D]"
             >
               {navigation.primaryCTA.label}
+              
             </Link>
           </div>
 

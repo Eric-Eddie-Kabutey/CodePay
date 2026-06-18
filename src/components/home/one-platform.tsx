@@ -38,7 +38,7 @@ function OnePlatform() {
                 </div>
               ))}
             </div>
-            <div className="lg:w-1/2 hidden sm:flex items-center justify-center bg-neutral-100 rounded-xl p-4 sm:p-8 border border-neutral-200">
+            <div className="lg:w-1/2 hidden sm:flex items-center justify-center bg-neutral-100 rounded-xl p-4 sm:p-8">
               <img
                 src={active.imageUrl}
                 alt={active.imageAlt}

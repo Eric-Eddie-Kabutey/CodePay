@@ -5,7 +5,7 @@ import { devTeaser } from "@/content/homepage";
 function DevCta() {
 
   return (
-      <section className="bg-white">
+      <section className="bg-white pt-20 sm:pt-24 lg:pt-28">
         <div className="mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid rounded-lg bg-gray-100 grid-cols-1 gap-6 lg:grid-cols-3">
             <Link

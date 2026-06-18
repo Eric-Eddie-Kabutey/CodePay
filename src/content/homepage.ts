@@ -7,7 +7,7 @@ export const seo = {
 export const hero = {
   headline: 'The Infrastructure That Moves Money Across Africa — And Beyond',
   subheadline:
-    "CodePay is Africa's first AI-powered remittance infrastructure, built on blockchain and modern cryptography. Launch your fintech, bank, or remittance business in 8–12 weeks with a platform that works in every country you touch — no rebuilds, no reinvention. Just one powerful backbone for global money movement.",
+    "CodePay is Africa's first AI-powered remittance infrastructure, built on blockchain and modern cryptography.",
   primaryCTA: { label: 'Book a Demo', href: '/contact' },
   secondaryCTA: { label: 'Explore the Platform', href: '/products' },
   imageUrl:
